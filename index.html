@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,8 +34,235 @@
     </style>
   </head>
   <body>
-    <header></header>
-    <main></main>
-    <footer></footer>
+    <header class="mx-12 my-7">
+      <section class="header flex justify-between items-center pb-10">
+        <!-- <h1 class="text-4xl font-black mulish">ReTro</h1> -->
+        <img src="B9A6-Retro-Forum-main/images/logo.png" alt="" />
+        <div class="flex justify-between items-center gap-6">
+          <i
+            class="fa-regular fa-house bg-gray-100 p-3 border-2 rounded-full"
+          ></i>
+          <i class="fa-light fa-pen bg-gray-100 p-3 border-2 rounded-full"></i>
+          <i
+            class="fa-light fa-user-plus bg-gray-100 p-3 border-2 rounded-full"
+          ></i>
+          <i
+            class="fa-regular fa-flag bg-gray-100 p-3 border-2 rounded-full"
+          ></i>
+          <button class="btn btn-primary text-lg px-9 rounded-3xl">
+            Sing In
+          </button>
+        </div>
+      </section>
+      <section
+        class="banner bg-[url('B9A6-Retro-Forum-main/images/bgbanner.png')] bg-no-repeat bg-center bg-cover flex justify-around items-center bg-[#12132d] h-[500px] rounded-3xl"
+      >
+        <div class="mulish space-y-6 text-white">
+          <h1 class="font-black text-6xl">
+            Welcome to the <br />
+            <span class="text-[#5457b2]">ReTro</span> Forum
+          </h1>
+          <p class="font-medium text-xl">
+            Share your favorite opinion and win and wp <br />
+            forum coffee mug!
+          </p>
+          <label
+            class="input input-bordered flex items-center gap-2 rounded-full py-7 text-black"
+          >
+            <input
+              type="text"
+              class="grow"
+              placeholder="Search here anything"
+            />
+            <button class="btn btn-primary px-6 rounded-3xl">Search</button>
+          </label>
+        </div>
+        <div
+          class="flex justify-around items-center gap-9 bg-white text-black rounded-2xl p-8"
+        >
+          <div class="mulish font-medium text-2xl space-y-3">
+            <h4>Registered Users</h4>
+            <h4>Forum</h4>
+            <h4>Topics</h4>
+            <h4>Replies</h4>
+          </div>
+          <div class="mulish font-medium text-2xl space-y-3">
+            <h4>01</h4>
+            <h4>05</h4>
+            <h4>01</h4>
+            <h4>01</h4>
+          </div>
+        </div>
+      </section>
+    </header>
+
+    <main class="mx-12 my-7">
+      <section class="pb-24">
+        <div class="mulish text-center max-w-3xl mx-auto space-y-3 py-9 mb-8">
+          <h1 class="font-black text-4xl">Let’s Discuss</h1>
+          <p class="inter text-lg font-normal">
+            Yes, you can run unit tests and view the results directly within the
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <div class="card-section flex justify-between">
+          <div class="card-div bg-gray-100 flex gap-5 p-10 rounded-2xl">
+            <div class="h-20 w-20">
+              <div class="avatar online placeholder">
+                <div class="bg-neutral text-neutral-content rounded-2xl w-16">
+                  <img
+                    src="B9A6-Retro-Forum-main/images/joinforum.png"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="space-y-2">
+              <div class="inter font-medium text-sm flex gap-6">
+                <p># Music</p>
+                <p>Author : Awlad Hossain</p>
+              </div>
+              <h1 class="mulish font-bold text-xl">
+                10 Kids Unaware of Their Halloween Costume
+              </h1>
+              <p class="inter text-base">
+                It’s one thing to subject yourself to ha Halloween costume
+                mishap because, <br />
+                hey that’s your prerogative
+              </p>
+              <div
+                class="flex justify-between gap-16 items-center border-t-2 border-dashed border-gray-200 pt-3"
+              >
+                <div class="flex justify-center gap-16">
+                  <div class="flex justify-center items-center gap-2">
+                    <i class="fa-light fa-message-lines"></i>
+                    <p>560</p>
+                  </div>
+                  <div class="flex justify-center items-center gap-2">
+                    <i class="fa-light fa-eye"></i>
+                    <p>1,568</p>
+                  </div>
+                  <div class="flex justify-center items-center gap-2">
+                    <i class="fa-regular fa-clock"></i>
+                    <p>5 min</p>
+                  </div>
+                </div>
+                <i
+                  class="fa-regular fa-envelope-open bg-[#10b981] p-2 rounded-full text-white"
+                ></i>
+              </div>
+            </div>
+          </div>
+          <div class="bg-gray-100 rounded-2xl p-8">
+            <div class="flex justify-between gap-16">
+              <h1 class="mulish text-xl font-bold">Title</h1>
+              <div class="flex items-center gap-2">
+                <i class="fa-light fa-check-double text-[#10b981]"></i>
+                <p class="inter text-base">Mark as read (<span>4</span>)</p>
+              </div>
+            </div>
+            <div id="items-mark"></div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="banner flex justify-around items-center bg-[#12132d] h-[350px] rounded-3xl"
+      >
+        <div class="mulish space-y-6 text-white">
+          <h1 class="font-black text-4xl">Join Our Forum</h1>
+          <p class="font-medium text-lg">
+            Share your favorite opinion and win and wp forum coffee mug! Yes,
+            you can <br />run unit tests and view the results directly within
+            the app.
+          </p>
+          <button class="btn btn-primary px-6 rounded-3xl">
+            Registered Now
+          </button>
+        </div>
+        <div class=" border-x-4 border-t-4 border-gray-400 border-dashed w-96 h-80 p-8">
+          <img src="B9A6-Retro-Forum-main/images/joinforum.png" alt="">
+        </div>
+      </section>
+      <section class="pb-8">
+        <div class="mulish text-center max-w-3xl mx-auto space-y-3 py-9 mb-8">
+          <h1 class="font-black text-4xl">Latest Posts</h1>
+          <p class="inter text-lg font-normal">
+            Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <div class="flex justify-between items-center gap-3">
+          <div class="card bg-base-100 shadow-xl border-2 border-gray-300">
+            <figure class="px-10 pt-10"><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <div class="card-body space-y-2">
+              <div class="flex justify-center items-center gap-4">
+                <i class="fa-light fa-calendar-minus"></i>
+                <p>29 January 2024</p>
+              </div>
+              <h2 class="card-title">What will a mars habitat force that <br> impact in our daily life!!!</h2>
+              <p class="text-sm">Yes, you can run unit tests and view the <br> results directly within the app. </p>
+              <div class="flex items-center gap-3">
+                <img class="h-11 w-12 rounded-full" src="B9A6-Retro-Forum-main/images/joinforum.png" alt="">
+                <div class="mulish">
+                  <h2 class="text-base font-semibold">Cameron Williamson</h2>
+                  <p class="text-xs">Unknown</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card  bg-base-100 shadow-xl border-2 border-gray-300">
+            <figure class="px-10 pt-10"><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <div class="card-body space-y-2">
+              <div class="flex justify-center items-center gap-4">
+                <i class="fa-light fa-calendar-minus"></i>
+                <p>29 January 2024</p>
+              </div>
+              <h2 class="card-title">What will a mars habitat force that <br> impact in our daily life!!!</h2>
+              <p class="text-sm">Yes, you can run unit tests and view the <br> results directly within the app. </p>
+              <div class="flex items-center gap-3">
+                <img class="h-11 w-12 rounded-full" src="B9A6-Retro-Forum-main/images/joinforum.png" alt="">
+                <div class="mulish">
+                  <h2 class="text-base font-semibold">Cameron Williamson</h2>
+                  <p class="text-xs">Unknown</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card bg-base-100 shadow-xl border-2 border-gray-300">
+            <figure class="px-10 pt-10"><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" /></figure>
+            <div class="card-body space-y-2">
+              <div class="flex justify-center items-center gap-4">
+                <i class="fa-light fa-calendar-minus"></i>
+                <p>29 January 2024</p>
+              </div>
+              <h2 class="card-title">What will a mars habitat force that <br> impact in our daily life!!!</h2>
+              <p class="text-sm">Yes, you can run unit tests and view the <br> results directly within the app. </p>
+              <div class="flex items-center gap-3">
+                <img class="h-11 w-12 rounded-full" src="B9A6-Retro-Forum-main/images/joinforum.png" alt="">
+                <div class="mulish">
+                  <h2 class="text-base font-semibold">Cameron Williamson</h2>
+                  <p class="text-xs">Unknown</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="text-center bg-[#f4f4f5] space-y-4 py-12">
+      <aside class="mulish space-y-3 pt-6">
+        <h1 class="text-4xl font-black">ReTro</h1>
+        <p class="text-base">
+          Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots <br> in a piece of classical Latin literature from 45 BC
+        </p> 
+      </aside> 
+      <div class="flex justify-center items-center gap-7 text-xl border-b-2 border-gray-200 pb-7">
+        <i class="fa-brands fa-twitter"></i>
+        <i class="fa-brands fa-facebook-f"></i>
+        <i class="fa-brands fa-instagram"></i>
+        <i class="fa-brands fa-github"></i>
+      </div>
+      <p class="mulish text-base font-light pt-3">2017, All Rights Reserved.</p>
+    </footer>
   </body>
 </html>
