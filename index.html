@@ -35,44 +35,98 @@
   </head>
   <body>
     <header class="mx-12 my-7">
-      <section class="header flex justify-between items-center pb-10">
-        <!-- <h1 class="text-4xl font-black mulish">ReTro</h1> -->
-        <img src="B9A6-Retro-Forum-main/images/logo.png" alt="" />
-        <div class="flex justify-between items-center gap-6">
-          <div class="tooltip" data-tip="Home">
-            <i
-              class="fa-regular fa-house bg-gray-100 p-3 border-2 rounded-full"
-            ></i>
+      <section class="pb-">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow rounded-box w-52 font-bold"
+              >
+                <div class="flex justify-between items-center gap-6">
+                  <div class="tooltip" data-tip="Home">
+                    <i
+                      class="fa-regular fa-house bg-gray-100 p-3 border-2 rounded-full"
+                    ></i>
+                  </div>
+                  <div class="tooltip" data-tip="Edit">
+                    <i
+                      class="fa-light fa-pen bg-gray-100 p-3 border-2 rounded-full"
+                    ></i>
+                  </div>
+                  <div class="tooltip" data-tip="User">
+                    <i
+                      class="fa-light fa-user-plus bg-gray-100 p-3 border-2 rounded-full"
+                    ></i>
+                  </div>
+                  <div class="tooltip" data-tip="Flag">
+                    <i
+                      class="fa-regular fa-flag bg-gray-100 p-3 border-2 rounded-full"
+                    ></i>
+                  </div>
+                </div>
+              </ul>
+            </div>
+            <img class="w-16 h-8 lg:h-auto lg:w-auto" src="B9A6-Retro-Forum-main/images/logo.png" alt="" />
           </div>
-          <div class="tooltip" data-tip="Edit">
-            <i
-              class="fa-light fa-pen bg-gray-100 p-3 border-2 rounded-full"
-            ></i>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1 font-bold">
+              <div class="flex justify-between items-center gap-6">
+                <div class="tooltip" data-tip="Home">
+                  <i
+                    class="fa-regular fa-house bg-gray-100 p-3 border-2 rounded-full"
+                  ></i>
+                </div>
+                <div class="tooltip" data-tip="Edit">
+                  <i
+                    class="fa-light fa-pen bg-gray-100 p-3 border-2 rounded-full"
+                  ></i>
+                </div>
+                <div class="tooltip" data-tip="User">
+                  <i
+                    class="fa-light fa-user-plus bg-gray-100 p-3 border-2 rounded-full"
+                  ></i>
+                </div>
+                <div class="tooltip" data-tip="Flag">
+                  <i
+                    class="fa-regular fa-flag bg-gray-100 p-3 border-2 rounded-full"
+                  ></i>
+                </div>
+              </div>
+            </ul>
           </div>
-          <div class="tooltip" data-tip="User">
-            <i
-              class="fa-light fa-user-plus bg-gray-100 p-3 border-2 rounded-full"
-            ></i>
+          <div class="navbar-end space-x-4">
+            <button class="btn btn-primary text-lg px-9 rounded-3xl">
+              Sing In
+            </button>
           </div>
-          <div class="tooltip" data-tip="Flag">
-            <i
-              class="fa-regular fa-flag bg-gray-100 p-3 border-2 rounded-full"
-            ></i>
-          </div>
-          <button class="btn btn-primary text-lg px-9 rounded-3xl">
-            Sing In
-          </button>
         </div>
       </section>
       <section
-        class="banner bg-[url('B9A6-Retro-Forum-main/images/bgbanner.png')] bg-no-repeat bg-center bg-cover flex justify-around items-center bg-[#12132d] h-[500px] rounded-3xl"
+        class="banner bg-[url('B9A6-Retro-Forum-main/images/bgbanner.png')] bg-no-repeat bg-center bg-cover flex flex-col lg:flex-row justify-around items-center bg-[#12132d] h-[600px] lg:h-[500px] rounded-3xl p-4"
       >
-        <div class="mulish space-y-6 text-white">
-          <h1 class="font-black text-6xl">
+        <div class="mulish space-y-6 text-white text-center lg:text-left">
+          <h1 class="font-black text-3xl lg:text-6xl">
             Welcome to the <br />
             <span class="text-[#5457b2]">ReTro</span> Forum
           </h1>
-          <p class="font-medium text-xl">
+          <p class="font-medium text-xs lg:text-xl">
             Share your favorite opinion and win and wp <br />
             forum coffee mug!
           </p>
@@ -87,7 +141,7 @@
             />
             <button
               onclick="handleSearch()"
-              class="btn btn-primary px-6 rounded-3xl"
+              class="btn btn-primary px-2 lg:px-6 rounded-2xl lg:rounded-3xl"
             >
               Search
             </button>
@@ -121,9 +175,14 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
-        <div class="card-section flex justify-between gap-6">
+        <div id="loading-spinner" class="hidden text-center">
+          <span class="loading loading-spinner loading-lg"></span>
+        </div>
+        <div
+          class="card-section flex flex-col lg:flex-row justify-center lg:justify-between gap-6"
+        >
           <div id="card-div"></div>
-          <div class="bg-gray-100 rounded-2xl p-6 ">
+          <div class="bg-gray-100 rounded-2xl p-6">
             <div class="flex justify-between gap-16">
               <h1 class="mulish text-xl font-bold">Title</h1>
               <div class="flex items-center gap-2">
@@ -138,11 +197,11 @@
         </div>
       </section>
       <section
-        class="banner flex justify-around items-center bg-[#12132d] h-[350px] rounded-3xl"
+        class="flex flex-col lg:flex-row justify-center lg:justify-around items-center bg-[#12132d] lg:h-[350px] rounded-2xl lg:rounded-3xl"
       >
-        <div class="mulish space-y-6 text-white">
-          <h1 class="font-black text-4xl">Join Our Forum</h1>
-          <p class="font-medium text-lg">
+        <div class="mulish space-y-6 text-white p-3 lg:p-0">
+          <h1 class="font-black text-2xl lg:text-4xl">Join Our Forum</h1>
+          <p class="font-medium text-base lg:text-lg">
             Share your favorite opinion and win and wp forum coffee mug! Yes,
             you can <br />run unit tests and view the results directly within
             the app.
@@ -151,9 +210,7 @@
             Registered Now
           </button>
         </div>
-        <div
-          class="border-x-4 border-t-4 border-gray-400 border-dashed w-96 h-80 p-8"
-        >
+        <div class="w-96 h-80 p-8">
           <img src="B9A6-Retro-Forum-main/images/joinforum.png" alt="" />
         </div>
       </section>
@@ -167,13 +224,13 @@
         </div>
         <div
           id="latest-post-container"
-          class="flex justify-between items-center gap-3"
+          class="flex flex-col lg:flex-row justify-between items-center gap-3"
         ></div>
       </section>
     </main>
 
     <footer class="text-center bg-[#f4f4f5] space-y-4 py-12">
-      <aside class="mulish space-y-3 pt-6">
+      <aside class="mulish space-y-3 pt-6 px-3">
         <h1 class="text-4xl font-black">ReTro</h1>
         <p class="text-base">
           Contrary to popular belief, Lorem Ipsum is not simply random text. It

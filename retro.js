@@ -1,5 +1,6 @@
 let count = 0;
 const loadPost = async (searchField) => {
+  document.getElementById('loading-spinner').style.display='block'
   const res = await fetch(
     `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchField}`
   );
@@ -13,9 +14,10 @@ const displayPost = (posts) => {
   postContainer.textContent = "";
   //   postContainer.textContent = "";
   posts.forEach((post) => {
+    document.getElementById('loading-spinner').style.display = 'none';
     // console.log(post);
     const postCard = document.createElement("div");
-    postCard.classList = `bg-gray-100 flex gap-5 p-10 rounded-2xl mb-5`;
+    postCard.classList = `bg-gray-100 flex flex-col lg:flex-row gap-5 p-10 rounded-2xl mb-5`;
     postCard.innerHTML = `
     <div class="h-20 w-20">
     <div class="avatar online placeholder">
@@ -41,7 +43,7 @@ const displayPost = (posts) => {
     <div
       class="flex justify-between gap-16 items-center border-t-2 border-dashed border-gray-200 pt-3"
     >
-      <div class="flex justify-between items-center gap-16">
+      <div class="flex flex-col lg:flex-row justify-between items-center gap-16">
         <div class="flex justify-between items-center gap-2">
           <i class="fa-light fa-message-lines"></i>
           <p>${post.comment_count}</p>
@@ -62,14 +64,13 @@ const displayPost = (posts) => {
       </div>
     </div>
   </div>
-    `
-    ;
+    `;
     postContainer.appendChild(postCard);
   });
 };
-const handlePostCount = (title,view_count) => {
+const handlePostCount = (title, view_count) => {
   const postCounter = document.getElementById("post-count");
-  count =count+1;
+  count = count + 1;
   postCounter.innerText = count;
   const itemsMarkContainer = document.getElementById("items-mark");
   const itemCard = document.createElement("div");
@@ -85,7 +86,6 @@ const handlePostCount = (title,view_count) => {
   `;
   itemsMarkContainer.appendChild(itemCard);
 };
-
 
 const handleSearch = () => {
   const searchField = document.getElementById("search-field").value;
@@ -109,7 +109,7 @@ const displayLatestPost = (posts2) => {
   // console.log(posts2);
   const latestPostContainer = document.getElementById("latest-post-container");
   posts2.forEach((post) => {
-    // console.log(post);
+    console.log(post);
     const latestPostCard = document.createElement("div");
     latestPostCard.classList = `card bg-base-100 shadow-xl border-2 border-gray-300`;
     latestPostCard.innerHTML = `
@@ -141,10 +141,10 @@ const displayLatestPost = (posts2) => {
                   alt=""
                 />
                 <div class="mulish">
-                <h2 class="text-base font-semibold">${
-                  !post.author?.name ? "No Publish Date" : post.author.name
-                }</h2>
-                  <p class="text-xs">${post.author.designation}</p>
+                <h2 class="text-base font-semibold">${post.author.name}</h2>
+                  <p class="text-xs">${!post.author?.designation
+                    ? "Unknown"
+                    : post.author.designation}</p>
                 </div>
               </div>
             </div>
