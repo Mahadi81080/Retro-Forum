@@ -51,7 +51,7 @@ const displayPost = (posts) => {
     ${post.description}
     </p>
     <div
-      class="flex justify-between gap-16 items-center border-t-2 border-dashed border-gray-200 pt-3"
+      class="flex justify-between items-center gap-16 border-t-2 border-dashed border-gray-200 pt-3"
     >
       <div class="flex flex-col lg:flex-row justify-between items-center gap-16">
         <div class="flex justify-between items-center gap-2">
@@ -64,7 +64,7 @@ const displayPost = (posts) => {
         </div>
         <div class="flex justify-between items-center gap-2">
           <i class="fa-regular fa-clock"></i>
-          <p>${post.posted_time}</p>
+          <p>${post.posted_time}min</p>
         </div>
       </div>
       <div onclick="handlePostCount('${post.title}', '${post.view_count}')">
@@ -105,7 +105,7 @@ const handleSearch = () => {
     alert("Please enter avalid catID");
   }
 };
-loadPost("music");
+loadPost("comedy");
 
 const latestPost = async () => {
   const res = await fetch(
