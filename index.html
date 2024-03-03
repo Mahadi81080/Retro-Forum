@@ -80,11 +80,17 @@
             class="input input-bordered flex items-center gap-2 rounded-full py-7 text-black"
           >
             <input
+              id="search-field"
               type="text"
               class="grow"
               placeholder="Search here anything"
             />
-            <button class="btn btn-primary px-6 rounded-3xl">Search</button>
+            <button
+              onclick="handleSearch()"
+              class="btn btn-primary px-6 rounded-3xl"
+            >
+              Search
+            </button>
           </label>
         </div>
         <div
@@ -115,62 +121,16 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
-        <div class="card-section flex justify-between">
-          <div id="card-div" class="">
-            <!-- <div class="bg-gray-100 flex gap-5 p-10 rounded-2xl mb-5">
-              <div class="h-20 w-20">
-                <div class="avatar online placeholder">
-                  <div class="bg-neutral text-neutral-content rounded-2xl w-16">
-                    <img
-                      src="B9A6-Retro-Forum-main/images/joinforum.png"
-                      alt=""
-                    />
-                  </div>
-                </div>
-              </div>
-              <div class="space-y-2">
-                <div class="inter font-medium text-sm flex gap-6">
-                  <p># Music</p>
-                  <p>Author : Awlad Hossain</p>
-                </div>
-                <h1 class="mulish font-bold text-xl">
-                  10 Kids Unaware of Their Halloween Costume
-                </h1>
-                <p class="inter text-base">
-                  It’s one thing to subject yourself to ha Halloween costume
-                  mishap because, <br />
-                  hey that’s your prerogative
-                </p>
-                <div
-                  class="flex justify-between gap-16 items-center border-t-2 border-dashed border-gray-200 pt-3"
-                >
-                  <div class="flex justify-center gap-16">
-                    <div class="flex justify-center items-center gap-2">
-                      <i class="fa-light fa-message-lines"></i>
-                      <p>560</p>
-                    </div>
-                    <div class="flex justify-center items-center gap-2">
-                      <i class="fa-light fa-eye"></i>
-                      <p>1,568</p>
-                    </div>
-                    <div class="flex justify-center items-center gap-2">
-                      <i class="fa-regular fa-clock"></i>
-                      <p>5 min</p>
-                    </div>
-                  </div>
-                  <i
-                    class="fa-regular fa-envelope-open bg-[#10b981] p-2 rounded-full text-white"
-                  ></i>
-                </div>
-              </div>
-            </div> -->
-          </div>
-          <div class="bg-gray-100 rounded-2xl p-8 h-40">
+        <div class="card-section flex justify-between gap-6">
+          <div id="card-div"></div>
+          <div class="bg-gray-100 rounded-2xl p-6 ">
             <div class="flex justify-between gap-16">
               <h1 class="mulish text-xl font-bold">Title</h1>
               <div class="flex items-center gap-2">
                 <i class="fa-light fa-check-double text-[#10b981]"></i>
-                <p class="inter text-base">Mark as read (<span>4</span>)</p>
+                <p class="inter text-base">
+                  Mark as read (<span id="post-count">0</span>)
+                </p>
               </div>
             </div>
             <div id="items-mark"></div>
@@ -205,107 +165,10 @@
             app. The integrated testing features allow for a streamlined .
           </p>
         </div>
-        <div class="flex justify-between items-center gap-3">
-          <div class="card bg-base-100 shadow-xl border-2 border-gray-300">
-            <figure class="px-10 pt-10">
-              <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
-            </figure>
-            <div class="card-body space-y-2">
-              <div class="flex justify-center items-center gap-4">
-                <i class="fa-light fa-calendar-minus"></i>
-                <p>29 January 2024</p>
-              </div>
-              <h2 class="card-title">
-                What will a mars habitat force that <br />
-                impact in our daily life!!!
-              </h2>
-              <p class="text-sm">
-                Yes, you can run unit tests and view the <br />
-                results directly within the app.
-              </p>
-              <div class="flex items-center gap-3">
-                <img
-                  class="h-11 w-12 rounded-full"
-                  src="B9A6-Retro-Forum-main/images/joinforum.png"
-                  alt=""
-                />
-                <div class="mulish">
-                  <h2 class="text-base font-semibold">Cameron Williamson</h2>
-                  <p class="text-xs">Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card bg-base-100 shadow-xl border-2 border-gray-300">
-            <figure class="px-10 pt-10">
-              <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
-            </figure>
-            <div class="card-body space-y-2">
-              <div class="flex justify-center items-center gap-4">
-                <i class="fa-light fa-calendar-minus"></i>
-                <p>29 January 2024</p>
-              </div>
-              <h2 class="card-title">
-                What will a mars habitat force that <br />
-                impact in our daily life!!!
-              </h2>
-              <p class="text-sm">
-                Yes, you can run unit tests and view the <br />
-                results directly within the app.
-              </p>
-              <div class="flex items-center gap-3">
-                <img
-                  class="h-11 w-12 rounded-full"
-                  src="B9A6-Retro-Forum-main/images/joinforum.png"
-                  alt=""
-                />
-                <div class="mulish">
-                  <h2 class="text-base font-semibold">Cameron Williamson</h2>
-                  <p class="text-xs">Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card bg-base-100 shadow-xl border-2 border-gray-300">
-            <figure class="px-10 pt-10">
-              <img
-                src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                alt="Shoes"
-              />
-            </figure>
-            <div class="card-body space-y-2">
-              <div class="flex justify-center items-center gap-4">
-                <i class="fa-light fa-calendar-minus"></i>
-                <p>29 January 2024</p>
-              </div>
-              <h2 class="card-title">
-                What will a mars habitat force that <br />
-                impact in our daily life!!!
-              </h2>
-              <p class="text-sm">
-                Yes, you can run unit tests and view the <br />
-                results directly within the app.
-              </p>
-              <div class="flex items-center gap-3">
-                <img
-                  class="h-11 w-12 rounded-full"
-                  src="B9A6-Retro-Forum-main/images/joinforum.png"
-                  alt=""
-                />
-                <div class="mulish">
-                  <h2 class="text-base font-semibold">Cameron Williamson</h2>
-                  <p class="text-xs">Unknown</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div
+          id="latest-post-container"
+          class="flex justify-between items-center gap-3"
+        ></div>
       </section>
     </main>
 
