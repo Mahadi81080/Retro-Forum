@@ -1,6 +1,6 @@
 let count = 0;
 const loadPost = async (searchField) => {
-  document.getElementById('loading-spinner').style.display='block'
+  document.getElementById("loading-spinner").style.display = "block";
   const res = await fetch(
     `https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchField}`
   );
@@ -9,20 +9,30 @@ const loadPost = async (searchField) => {
   displayPost(posts);
 };
 const displayPost = (posts) => {
-  //   console.log(posts);
+  // console.log(posts);
   const postContainer = document.getElementById("card-div");
   postContainer.textContent = "";
   //   postContainer.textContent = "";
   posts.forEach((post) => {
-    document.getElementById('loading-spinner').style.display = 'none';
+    console.log(post);
+    const activeVerified = document.querySelectorAll(".active-verified");
+    activeVerified.forEach((element) => {
+      if (post.isActive === true) {
+        element.classList.add("bg-green-500");
+      } else {
+        element.classList.add("bg-red-500");
+      }
+    });
+    document.getElementById("loading-spinner").style.display = "none";
     // console.log(post);
     const postCard = document.createElement("div");
     postCard.classList = `bg-gray-100 flex flex-col lg:flex-row gap-5 p-10 rounded-2xl mb-5`;
     postCard.innerHTML = `
     <div class="h-20 w-20">
-    <div class="avatar online placeholder">
-      <div class="bg-neutral text-neutral-content rounded-2xl w-16">
-        <img
+    <div >
+      <div class="w-20 absolute">
+      <div class="active-verified bg-red-500 h-5 w-5 rounded-full relative -right-16 top-6"></div>
+        <img class="rounded-3xl"
           src="${post.image}"
           alt=""
         />
@@ -142,9 +152,11 @@ const displayLatestPost = (posts2) => {
                 />
                 <div class="mulish">
                 <h2 class="text-base font-semibold">${post.author.name}</h2>
-                  <p class="text-xs">${!post.author?.designation
-                    ? "Unknown"
-                    : post.author.designation}</p>
+                  <p class="text-xs">${
+                    !post.author?.designation
+                      ? "Unknown"
+                      : post.author.designation
+                  }</p>
                 </div>
               </div>
             </div>
