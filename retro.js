@@ -9,20 +9,23 @@ const loadPost = async (searchField) => {
   displayPost(posts);
 };
 const displayPost = (posts) => {
-  // console.log(posts);
+  console.log(posts);
   const postContainer = document.getElementById("card-div");
   postContainer.textContent = "";
-  //   postContainer.textContent = "";
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
+   
     const activeVerified = document.querySelectorAll(".active-verified");
+    // console.log(activeVerified)
     activeVerified.forEach((element) => {
-      if (post.isActive === true) {
-        element.classList.add("bg-green-500");
-      } else {
+      console.log(element)
+      console.log(post.isActive)
+      if (post.isActive === false) {
+        element.classList.remove("bg-green-500");
         element.classList.add("bg-red-500");
       }
     });
+    
     document.getElementById("loading-spinner").style.display = "none";
     // console.log(post);
     const postCard = document.createElement("div");
@@ -31,7 +34,7 @@ const displayPost = (posts) => {
     <div class="h-20 w-20">
     <div >
       <div class="w-20 absolute">
-      <div class="active-verified bg-red-500 h-5 w-5 rounded-full relative -right-16 top-6"></div>
+      <div class="active-verified bg-green-500 h-5 w-5 rounded-full relative -right-16 top-6"></div>
         <img class="rounded-3xl"
           src="${post.image}"
           alt=""
@@ -119,7 +122,7 @@ const displayLatestPost = (posts2) => {
   // console.log(posts2);
   const latestPostContainer = document.getElementById("latest-post-container");
   posts2.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const latestPostCard = document.createElement("div");
     latestPostCard.classList = `card bg-base-100 shadow-xl border-2 border-gray-300`;
     latestPostCard.innerHTML = `
