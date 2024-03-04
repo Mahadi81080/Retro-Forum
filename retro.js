@@ -14,18 +14,17 @@ const displayPost = (posts) => {
   postContainer.textContent = "";
   posts.forEach((post) => {
     // console.log(post);
-   
+
     const activeVerified = document.querySelectorAll(".active-verified");
     // console.log(activeVerified)
     activeVerified.forEach((element) => {
-      console.log(element)
-      console.log(post.isActive)
+      console.log(element);
+      console.log(post.isActive);
       if (post.isActive === false) {
         element.classList.remove("bg-green-500");
         element.classList.add("bg-red-500");
       }
     });
-    
     document.getElementById("loading-spinner").style.display = "none";
     // console.log(post);
     const postCard = document.createElement("div");
@@ -108,7 +107,7 @@ const handleSearch = () => {
     alert("Please enter avalid catID");
   }
 };
-loadPost("comedy");
+loadPost("music");
 
 const latestPost = async () => {
   const res = await fetch(
